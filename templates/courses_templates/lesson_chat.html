@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<!-- lessons section -->
+    <section class="lessons_section">
+        <aside class="course_lessons">
+            <div class="course_info">
+                <div class="course_img">
+                    <img src="{{ course.image.url }}" alt="foto">
+                </div>
+                <div class="course_data">
+                    <h3>{{ course.name }} kursi</h3>
+                    <p>Jami {{ course.lessons }} ta dars</p>
+                </div>
+            </div>
+            <div class="lessons_div">
+                {% for dars in lesson %}
+                <div class="lesson_card">
+                    <h3>{{ dars.subject }}</h3>
+                    <form action="{% url 'lesson_chat' %}" method="post">
+                        {% csrf_token %}
+
+                        <input type="hidden" name="course_pk" value="{{ course.id }}">
+
+                        <button type="submit" name="savol"
+                                value="{{ dars.lesson_number }}-dars mavzu:{{ dars.subject }}">
+                            {{ dars.lesson_number }}-dars
+                        </button>
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+        </aside>
+        <aside class="lesson_chat">
+            <div class="messages_chat">
+                <p id="user_message">...</p>
+                <p id="AI_message">{{ response }}</p>
+            </div>
+            <div class="request_form">
+                <form action="{% url 'lesson_chat' %}" method="post">
+                    {% csrf_token %}
+
+                    <input type="hidden" name="course_pk" value="{{ course.id }}">
+                    <textarea name="savol"
+                           id="request_input"
+                           placeholder="AI teacher chat..."
+                           cols="30" rows="10">
+                    </textarea>
+
+                    <button type="submit">⏏</button>
+                </form>
+                <div class="lesson_plus">
+                    <form action="{% url 'lesson_chat' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="course_pk" value="{{ course.id }}">
+                        <button type="submit" name="savol" value="Mavzu haqida 10 test">Mavzu haqida 10 test</button>
+                    </form>
+                    <form action="{% url 'lesson_chat' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="course_pk" value="{{ course.id }}">
+                        <button type="submit" name="savol" value="Uyga vazifa">Uyga vazifa</button>
+                    </form>
+                </div>
+            </div>
+        </aside>
+    </section>
+<!-- /lessons section -->
+
+
+</body>
+</html>

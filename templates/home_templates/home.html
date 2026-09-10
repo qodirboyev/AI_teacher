@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI teacher</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+</head>
+<body>
+
+
+
+<!-- nav section -->
+    <nav class="nav_section" id="nav_section">
+        <div class="nav_title">
+            <h3>Qaysi mutaxassislik bo'yicha o'qishni xohlaysiz?</h3>
+        </div>
+        <div class="nav_items">
+            <div class="nav_item">
+                <h3>Backend</h3>
+                <form action="{% url 'courses' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" value="backend" name="direction">Ko'rish...</button>
+                </form>
+            </div>
+            <div class="nav_item">
+                <h3>Frontend</h3>
+                <form action="{% url 'courses' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit"  value="frontend" name="direction">Ko'rish...</button>
+                </form>
+            </div>
+            <div class="nav_item">
+                <h3>Cyber security</h3>
+                <form action="{% url 'courses' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" value="cyber" name="direction">Ko'rish...</button>
+                </form>
+            </div>
+            <div class="nav_item">
+                <h3>Robotatexnika</h3>
+                <form action="{% url 'courses' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" value="robot" name="direction">Ko'rish...</button>
+                </form>
+            </div>
+            <div class="nav_item">
+                <h3>OS (Windows | Mac | Linux)</h3>
+                <form action="{% url 'courses' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" value="os" name="direction">Ko'rish...</button>
+                </form>
+            </div>
+            <div class="nav_item">
+                <h3>AI (sun’iy intellekt)</h3>
+                <form action="{% url 'courses' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" value="ai" name="direction">Ko'rish...</button>
+                </form>
+            </div>
+            <div class="nav_item">
+                <h3>Mobil dasturlash</h3>
+                <form action="{% url 'courses' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" value="mobile" name="direction">Ko'rish...</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+<!-- /nav section -->
+
+
+
+</body>
+</html>

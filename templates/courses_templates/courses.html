@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<!-- courses list section -->
+    <section class="courses_section">
+        {% if courses %}
+            {% for course in courses %}
+                <div class="course_card">
+                    <div class="courses_img">
+                        <img src="{{ course.image.url }}" alt="foto">
+                    </div>
+                    <div class="course_info">
+                        <h3>{{ course.name }}</h3>
+                        <p>{{ course.info }}</p>
+                        <span>{{ course.lessons }} dars.</span>
+                        <form action="{% url 'lesson_chat' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" name="course_pk" value="{{ course.pk }}">Boshlash</button>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="course_card">
+                <h3>Darslar mavjud emas❌😔</h3>
+            </div>
+        {% endif %}
+    </section>
+<!-- /courses list section -->
+
+</body>
+</html>
