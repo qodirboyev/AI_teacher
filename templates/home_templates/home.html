@@ -1,66 +1,173 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>AI teacher</title>
 
+    <link rel="icon" href="{% static 'photos/AI_teacher_img.png' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
 </head>
 <body>
+<!-- header section -->
+    <header class="header_section">
+        <div class="AI_teacher_img">
+            <img src="{% static 'photos/AI_teacher_img.png' %}" alt="foto">
+        </div>
+        <div>
+            <h1 class="text"><span class="AI_span">AI</span> teacher</h1>
+        </div>
+    </header>
+<!-- /header section -->
 
+
+<!-- main section -->
+    <div class="contener">
+    <section class="main_section section_style">
+        <div class="main_info">
+            <h4 class="text"><span class="AI_span">AI</span> Teacher — bilim olish, savol berish va yangi
+                ko‘nikmalarni rivojlantirish uchun AI yordamidagi ta’lim platformasi.</h4>
+            <a href="#nav_section" class="text">Kurslar<i class="fa-solid fa-angles-right"></i></a>
+        </div>
+        <div class="main_img">
+            <img src="{% static 'photos/AI_teacher_img.png' %}" alt="foto">
+        </div>
+    </section>
+    </div>
+<!-- /main section -->
 
 
 <!-- nav section -->
-    <nav class="nav_section" id="nav_section">
+    <div class="contener">
+    <nav class="nav_section section_style" id="nav_section">
         <div class="nav_title">
-            <h3>Qaysi mutaxassislik bo'yicha o'qishni xohlaysiz?</h3>
+            <h3 class="text">Qaysi mutaxassislik bo'yicha o'qishni xohlaysiz?</h3>
         </div>
         <div class="nav_items">
             <div class="nav_item">
-                <h3>Backend</h3>
+                <div class="item_title">
+                    <h3>Backend</h3>
+                    <div class="item_icons">
+                        <i class="fa-brands fa-python"></i>
+                        <i class="fa-brands fa-node"></i>
+                        <i class="fa-brands fa-php"></i>
+                        <i class="fa-brands fa-java"></i>
+                        <i class="fa-brands fa-postgresql"></i>
+                        <i class="fa-solid fa-database"></i>
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                </div>
                 <form action="{% url 'courses' %}" method="post">
                     {% csrf_token %}
                     <button type="submit" value="backend" name="direction">Ko'rish...</button>
                 </form>
             </div>
             <div class="nav_item">
-                <h3>Frontend</h3>
+                <div class="item_title">
+                    <h3>Frontend</h3>
+                    <div class="item_icons">
+                        <i class="fa-brands fa-html5"></i>
+                        <i class="fa-brands fa-square-js"></i>
+                        <i class="fa-brands fa-css3-alt"></i>
+                        <i class="fa-brands fa-react"></i>
+                        <i class="fa-brands fa-vuejs"></i>
+                        <i class="fa-brands fa-bootstrap"></i>
+                        <i class="fa-brands fa-sass"></i>
+                    </div>
+                </div>
                 <form action="{% url 'courses' %}" method="post">
                     {% csrf_token %}
                     <button type="submit"  value="frontend" name="direction">Ko'rish...</button>
                 </form>
             </div>
             <div class="nav_item">
-                <h3>Cyber security</h3>
+                <div class="item_title">
+                    <h3>Cyber security</h3>
+                    <div class="item_icons">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <i class="fa-brands fa-linux"></i>
+                        <i class="fa-solid fa-user-secret"></i>
+                        <i class="fa-brands fa-whmcs"></i>
+                        <i class="fa-brands fa-expeditedssl"></i>
+                        <i class="fa-solid fa-database"></i>
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                </div>
                 <form action="{% url 'courses' %}" method="post">
                     {% csrf_token %}
                     <button type="submit" value="cyber" name="direction">Ko'rish...</button>
                 </form>
             </div>
             <div class="nav_item">
-                <h3>Robotatexnika</h3>
+                <div class="item_title">
+                    <h3>Robotatexnika</h3>
+                    <div class="item_icons">
+                        <i class="fa-solid fa-robot"></i>
+                        <i class="fa-solid fa-wrench"></i>
+                        <i class="fa-solid fa-gear"></i>
+                        <i class="fa-brands fa-android"></i>
+                        <i class="fa-brands fa-phabricator"></i>
+                        <i class="fa-brands fa-git-alt"></i>
+                        <i class="fa-solid fa-code-branch"></i>
+                    </div>
+                </div>
                 <form action="{% url 'courses' %}" method="post">
                     {% csrf_token %}
                     <button type="submit" value="robot" name="direction">Ko'rish...</button>
                 </form>
             </div>
             <div class="nav_item">
-                <h3>OS (Windows | Mac | Linux)</h3>
+                <div class="item_title">
+                    <h3>OS (Windows | Mac | Linux)</h3>
+                    <div class="item_icons">
+                        <i class="fa-brands fa-windows"></i>
+                        <i class="fa-brands fa-apple"></i>
+                        <i class="fa-brands fa-linux"></i>
+                        <i class="fa-brands fa-ubuntu"></i>
+                        <i class="fa-brands fa-debian"></i>
+                        <i class="fa-brands fa-fedora"></i>
+                        <i class="fa-brands fa-arch-linux"></i>
+                    </div>
+                </div>
                 <form action="{% url 'courses' %}" method="post">
                     {% csrf_token %}
                     <button type="submit" value="os" name="direction">Ko'rish...</button>
                 </form>
             </div>
             <div class="nav_item">
-                <h3>AI (sun’iy intellekt)</h3>
+                <div class="item_title">
+                    <h3>AI (sun’iy intellekt)</h3>
+                    <div class="item_icons">
+                        <i class="fa-brands fa-openai"></i>
+                        <i class="fa-solid fa-cloud"></i>
+                        <i class="fa-solid fa-hexagon-nodes-bolt"></i>
+                        <i class="fa-solid fa-star-of-life"></i>
+                        <i class="fa-brands fa-docker"></i>
+                        <i class="fa-solid fa-server"></i>
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                </div>
                 <form action="{% url 'courses' %}" method="post">
                     {% csrf_token %}
                     <button type="submit" value="ai" name="direction">Ko'rish...</button>
                 </form>
             </div>
             <div class="nav_item">
-                <h3>Mobil dasturlash</h3>
+                <div class="item_title">
+                    <h3>Mobil dasturlash</h3>
+                    <div class="item_icons">
+                        <i class="fa-brands fa-flutter"></i>
+                        <i class="fa-brands fa-dart-lang"></i>
+                        <i class="fa-brands fa-react"></i>
+                        <i class="fa-brands fa-android"></i>
+                        <i class="fa-brands fa-swift"></i>
+                        <i class="fa-brands fa-apple"></i>
+                        <i class="fa-solid fa-signal"></i>
+                    </div>
+                </div>
                 <form action="{% url 'courses' %}" method="post">
                     {% csrf_token %}
                     <button type="submit" value="mobile" name="direction">Ko'rish...</button>
@@ -68,9 +175,66 @@
             </div>
         </div>
     </nav>
+    </div>
 <!-- /nav section -->
 
 
 
+<!-- about section -->
+    <div class="contener">
+    <section class="about_section section_style">
+        <div class="about_title">
+            <h3 class="text"><span class="AI_span">AI</span> Teacher haqida</h3>
+        </div>
+        <div class="about_info">
+            <div class="AI-teacher_info">
+                <p class="text"><span class="AI_span">AI</span> Teacher — zamonaviy
+                    texnologiyalar yordamida ta’lim olishni yanada
+                    qulay va interaktiv qilishga
+                    mo‘ljallangan AI ta’lim platformasi.</p>
+                <p class="text">Platformada foydalanuvchi o‘ziga kerakli
+                    kursni tanlab, darslarni bosqichma-bosqich
+                    o‘rganishi va tushunmagan mavzulari bo‘yicha
+                    <span class="AI_span">AI</span> Teacher bilan
+                    bevosita muloqot qilishi mumkin.</p>
+            </div>
+            <div class="about_query">
+                <h3 class="text"><span class="AI_span">AI</span> Teacher nima qila oladi?</h3>
+                <ul class="text">
+                    <li>Tanlangan kurs va mavzu asosida savollarga javob beradi.</li>
+                    <li>Murakkab mavzularni sodda tushuntirishga yordam beradi.</li>
+                    <li>O‘quvchining savollariga individual javob beradi.</li>
+                    <li>Darslarni mustaqil o‘rganish jarayonini qo‘llab-quvvatlaydi.</li>
+                </ul>
+            </div>
+            <div class="about_target">
+                <h3 class="text">Bizning maqsadimiz</h3>
+                <p class="text">Ta’limni faqat ma’lumot o‘qish emas, balki
+                    savol berish, tushunish va amalda o‘rganish
+                    jarayoniga aylantirish.</p>
+                <h3 class="text"><span class="AI_span">AI</span> Teacher — o‘rganish uchun sening aqlli yordamching.</h3>
+            </div>
+        </div>
+    </section>
+    </div>
+<!-- /about section -->
+
+
+<!-- footer section -->
+    <footer class="footer_section">
+        <div class="footer_img">
+            <img src="{% static 'photos/AI_teacher_img.png' %}" alt="foto">
+            <h1 class="text"><span class="AI_span">AI</span> Teacher</h1>
+        </div>
+        <div class="footer_info">
+            <p class="text">© 2026 AI Teacher. All rights reserved.</p>
+            <div class="footer_media text">
+                <a href="#" class="text"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="text"><i class="fa-brands fa-telegram"></i></a>
+                <a href="#" class="text"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+<!-- /footer section -->
 </body>
 </html>
