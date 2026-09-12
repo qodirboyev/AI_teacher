@@ -38,6 +38,32 @@ a{
     text-decoration: none;
 }
 
+.back_button {
+    text-align: right;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    top: 30px;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+}
+.back_button a{
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    box-sizing: border-box;
+    background-image: linear-gradient(to top, rgb(255 255 255 / 0.32), rgb(0 0 0 / 0.28));
+    backdrop-filter: brightness(150%) blur(3px);
+    border-radius: 30px;
+    border: 2px outset buttonborder;
+    box-shadow: 2px 2px 5px black;
+    transition: 0.5s all;
+}
+
+.back_button a:hover{
+    transform: scale(1.1,1.1);
+    backdrop-filter: brightness(50%);
+}
+
 /* ========================== header style ========================================== */
 .header_section {
     display: flex;
