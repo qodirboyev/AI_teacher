@@ -7,6 +7,7 @@
 
     <link rel="icon" href="{% static 'photos/AI_teacher_img.png' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/lesson_chat.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
 </head>
@@ -30,13 +31,14 @@
 <!-- /back button -->
 
 <!-- lessons section -->
+    <div class="contener">
     <section class="lessons_section">
         <aside class="course_lessons">
             <div class="course_info">
                 <div class="course_img">
                     <img src="{{ course.image.url }}" alt="foto">
                 </div>
-                <div class="course_data">
+                <div class="course_data text">
                     <h3>{{ course.name }} kursi</h3>
                     <p>Jami {{ course.lessons }} ta dars</p>
                 </div>
@@ -61,8 +63,7 @@
         </aside>
         <aside class="lesson_chat">
             <div class="messages_chat">
-                <p id="user_message">...</p>
-                <p id="AI_message">{{ response }}</p>
+                <p id="AI_message" class="text">{{ response }}</p>
             </div>
             <div class="request_form">
                 <form action="{% url 'lesson_chat' %}" method="post">
@@ -72,10 +73,10 @@
                     <textarea name="savol"
                            id="request_input"
                            placeholder="AI teacher chat..."
-                           cols="30" rows="10">
+                           cols="30" rows="5" onfocus="this.value=this.value.trim();">
                     </textarea>
 
-                    <button type="submit">⏏</button>
+                    <button type="submit"><i class="fa-solid fa-arrow-up"></i></button>
                 </form>
                 <div class="lesson_plus">
                     <form action="{% url 'lesson_chat' %}" method="post">
@@ -92,6 +93,7 @@
             </div>
         </aside>
     </section>
+    </div>
 <!-- /lessons section -->
 
 <!-- footer section -->

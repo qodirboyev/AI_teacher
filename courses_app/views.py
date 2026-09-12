@@ -46,9 +46,9 @@ def lesson_chat_view(request):
                 model="gemini-3.6-flash",
                 contents=f"""
                 Sen AI Teacher san senga savollar boladi sen dars otasan lekin 
-                hardoyim buni takiroroy aytishing shar 
-                emas savolga qisqa javo bilan 
-                darsni tushuntirishing kerak halos
+                hardoyim buni takiroroy aytishing shart 
+                emas savolga qisqa va aniq javo bilan 
+                darsni tushuntirishing kerak halos 
                 agar savol bolmasa shunchaki darsga tayyor misiz deya javob qaytar
     
                 Kurs: {course.name}
@@ -58,17 +58,17 @@ def lesson_chat_view(request):
                 """,
             )
 
-            context["response"] = f"AI Teacher: {response.text}"
+            context["response"] = response.text
 
         except errors.ClientError as e:
 
             if e.code == 429:
-                context["response"] = "🤖 AI Teacher hozircha band. \nBirozdan keyin yana urinib ko‘ring."
+                context["response"] = "AI Teacherni dars limiti tugadi. \nBirozdan keyin yana urinib ko‘ring."
             else:
-                context["response"] = "❌ AI Teacher bilan bog‘lanishda xatolik yuz berdi."
+                context["response"] = "AI Teacher sever bilan bog‘lanishda xatolik yuz berdi.Birozdan keyin yana urinib ko‘ring."
 
         except errors.ServerError:
-            context["response"] = "🤖 AI Teacher serveri hozir band. \nBirozdan keyin yana urinib ko‘ring."
+            context["response"] = "AI Teacher serverida texnik tuzatish bo'lmoqda. \nBirozdan keyin yana urinib ko‘ring."
 
     return render(request, template_name, context)
 
