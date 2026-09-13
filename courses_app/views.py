@@ -68,7 +68,16 @@ def lesson_chat_view(request):
                 context["response"] = "AI Teacher sever bilan bog‘lanishda xatolik yuz berdi.Birozdan keyin yana urinib ko‘ring."
 
         except errors.ServerError:
-            context["response"] = "AI Teacher serverida texnik tuzatish bo'lmoqda. \nBirozdan keyin yana urinib ko‘ring."
+            except errors.ServerError as e:
+            # 500 va 503 ni ajratib ishlov beramiz
+            if "500" in str(e) or getattr(e, "code", None) == 500:
+                context[
+                    "response"] = "AI Teacher serverida ichki xato yuz berdi (500). \nIltimos, keyinroq yana urinib ko‘ring."
+            elif "503" in str(e) or getattr(e, "code", None) == 503:
+                context[
+                    "response"] = "AI Teacher serverida texnik tuzatish bo‘lmoqda (503). \nBirozdan keyin yana urinib ko‘ring."
+            else:
+                context["response"] = "AI Teacher serverida noma’lum xato yuz berdi."
 
     return render(request, template_name, context)
 

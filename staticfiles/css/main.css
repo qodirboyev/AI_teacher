@@ -146,3 +146,181 @@ a{
 }
 
 /* ========================== footer style ========================================== */
+
+
+
+/* =========================================================
+   RESPONSIVE DESIGN — TABLET + PHONE
+   ========================================================= */
+
+/* ====================== TABLET ====================== */
+@media (max-width: 768px) {
+
+    .contener {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    body {
+        background-attachment: scroll;
+        background-position: center;
+    }
+
+    /* ---------- HEADER ---------- */
+
+    .header_section {
+        height: 50px;
+        padding: 0 0.8rem;
+    }
+
+    .AI_teacher_img img {
+        width: 32px;
+    }
+
+    .header_section h1 {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+    }
+
+
+    /* ---------- BACK BUTTON ---------- */
+
+    .back_button {
+        top: 55px;
+        padding: 0.5rem 1rem;
+    }
+
+    .back_button a {
+        padding: 0.4rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+
+    /* ---------- SECTION ---------- */
+
+    .section_style {
+        margin: 2rem 0.5rem;
+        border-radius: 20px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .footer_section {
+        padding: 1.5rem 1rem;
+    }
+
+    .footer_img img {
+        width: 36px;
+    }
+
+    .footer_img h1 {
+        font-size: 1.3rem;
+    }
+
+    .footer_info p {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        line-height: 1.5;
+    }
+
+    .footer_media a {
+        font-size: 1.3rem;
+    }
+}
+
+
+/* ====================== PHONE ====================== */
+@media (max-width: 480px) {
+
+    .contener {
+        width: 100%;
+        padding: 0 0.7rem;
+    }
+
+    body {
+        background-attachment: scroll;
+        background-position: center;
+        background-size: cover;
+    }
+
+
+    /* ---------- HEADER ---------- */
+
+    .header_section {
+        height: 45px;
+        padding: 0 0.5rem;
+    }
+
+    .AI_teacher_img img {
+        width: 28px;
+    }
+
+    .header_section h1 {
+        font-size: 1rem;
+        padding: 0.4rem;
+        letter-spacing: 0.5px;
+    }
+
+
+    /* ---------- BACK BUTTON ---------- */
+
+    .back_button {
+        top: 48px;
+        padding: 0.4rem 0.7rem;
+    }
+
+    .back_button a {
+        padding: 0.35rem 0.9rem;
+        font-size: 0.8rem;
+    }
+
+    .back_button a:hover {
+        transform: none;
+    }
+
+
+    /* ---------- SECTION ---------- */
+
+    .section_style {
+        margin: 1.5rem 0.3rem;
+        border-radius: 15px;
+    }
+
+
+    /* ---------- TEXT ---------- */
+
+    .text {
+        letter-spacing: 0.5px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .footer_section {
+        padding: 1.3rem 0.7rem;
+    }
+
+    .footer_img img {
+        width: 32px;
+    }
+
+    .footer_img h1 {
+        font-size: 1.1rem;
+    }
+
+    .footer_info p {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+        line-height: 1.5;
+    }
+
+    .footer_media a {
+        font-size: 1.2rem;
+        padding: 0.2rem;
+    }
+
+    .footer_media a:hover {
+        transform: none;
+    }
+}
