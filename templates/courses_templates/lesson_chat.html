@@ -2,7 +2,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
     <meta charset="UTF-8">
+    <meta name="Author and ADMIN" content="Qodirboyev Demir">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="AI Teacher - Intellektual Ta'lim Platformasi">
+    <meta name="description" content="AI Teacher — sun’iy intellekt asosidagi aqlli o‘qituvchi platforma. Frontend, Backend, AI, Cybersecurity va boshqa IT yo‘nalishlarini interaktiv chat orqali o‘rganing.">
+    <meta name="keywords" content="AI Teacher, suniy intellekt, ta'lim platformasi, Python, Django, Frontend, Backend, Cybersecurity, IT kurslar, online o‘qish">
+
+
     <title>AI teacher</title>
 
     <link rel="icon" href="{% static 'photos/AI_teacher_img.png' %}">
@@ -82,7 +91,7 @@
                     <form action="{% url 'lesson_chat' %}" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="course_pk" value="{{ course.id }}">
-                        <button type="submit" name="savol" value="Mavzu haqida 10 test">Mavzu haqida 10 test</button>
+                        <button type="submit" name="savol" value="To'liq kusrdan 100 test">To'liq kusrdan 100 test</button>
                     </form>
                     <form action="{% url 'lesson_chat' %}" method="post">
                         {% csrf_token %}

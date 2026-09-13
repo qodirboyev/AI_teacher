@@ -170,3 +170,230 @@
 
 
 /* =========== about section style ==================== */
+
+
+
+
+/* =========================================================
+   HOME PAGE — RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 1050px) {
+    .main_img{
+        text-align: right;
+    }
+    .main_img img{
+        width: 350px;
+    }
+}
+
+
+
+
+/* ====================== TABLET ====================== */
+@media (max-width: 880px) {
+
+    /* ---------- MAIN SECTION ---------- */
+
+    .main_section {
+        padding: 1.5rem 1rem;
+        flex-direction: column;
+    }
+
+    .main_info,
+    .main_img {
+        width: 100%;
+        padding: 0.8rem;
+        text-align: center;
+    }
+
+    .main_img img {
+        width: min(70vw, 400px);
+        max-width: 100%;
+    }
+
+    .main_info h4 {
+        text-align: center;
+        font-size: 1.4rem;
+        padding: 1rem 0.5rem;
+        line-height: 1.5;
+    }
+
+    .main_info a {
+        padding: 0.5rem 1.8rem;
+    }
+
+
+    /* ---------- NAV SECTION ---------- */
+
+    .nav_section {
+        padding: 0.8rem;
+    }
+
+    .nav_title h3 {
+        font-size: 1.4rem;
+    }
+
+    .nav_items {
+        justify-content: center;
+    }
+
+    .nav_item {
+        width: 46%;
+        margin: 2%;
+        border-radius: 25px;
+        padding: 0.5rem;
+    }
+
+    .nav_item h3 {
+        font-size: 1.2rem;
+    }
+
+    .item_icons i {
+        font-size: 0.9rem;
+    }
+
+    .nav_item form {
+        padding: 0.6rem;
+    }
+
+    .nav_item button {
+        padding: 0.7rem 1.2rem;
+    }
+
+
+    /* ---------- ABOUT SECTION ---------- */
+
+    .about_section {
+        padding: 0.8rem;
+    }
+
+    .about_title h3 {
+        font-size: 1.4rem;
+        padding: 0.8rem;
+    }
+
+    .AI-teacher_info,
+    .about_query,
+    .about_target {
+        border-radius: 25px;
+        padding: 0.7rem;
+    }
+}
+
+
+/* ====================== PHONE ====================== */
+@media (max-width: 700px) {
+
+    /* ---------- MAIN SECTION ---------- */
+
+    .main_section {
+        padding: 1rem 0.5rem;
+        flex-direction: column;
+    }
+
+    .main_info,
+    .main_img {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .main_img img {
+        width: 75vw;
+        max-width: 300px;
+    }
+
+    .main_img img:hover {
+        transform: scale(1.03);
+        border-radius: 50%;
+    }
+
+    .main_info h4 {
+        text-align: center;
+        font-size: 1.15rem;
+        line-height: 1.5;
+        padding: 0.8rem 0.3rem;
+    }
+
+    .main_info a {
+        padding: 0.5rem 1.4rem;
+        font-size: 0.9rem;
+    }
+
+    .main_info a:hover {
+        transform: scale(1.03);
+        border-radius: 30px;
+    }
+
+
+    /* ---------- NAV SECTION ---------- */
+
+    .nav_section {
+        padding: 0.5rem;
+    }
+
+    .nav_title h3 {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+    }
+
+    .nav_items {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav_item {
+        width: 100%;
+        margin: 0.7rem 0;
+        border-radius: 20px;
+        padding: 0.5rem;
+    }
+
+    .nav_item h3 {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .item_icons i {
+        font-size: 0.8rem;
+    }
+
+    .nav_item h3,
+    .item_icons {
+        padding: 0.25rem;
+    }
+
+    .nav_item form {
+        padding: 0.4rem;
+    }
+
+    .nav_item button {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .nav_item button:hover {
+        transform: none;
+    }
+
+
+    /* ---------- ABOUT SECTION ---------- */
+
+    .about_section {
+        padding: 0.5rem;
+    }
+
+    .about_title h3 {
+        font-size: 1.2rem;
+        padding: 0.7rem;
+    }
+
+    .AI-teacher_info,
+    .about_query,
+    .about_target {
+        margin: 0.6rem 0;
+        padding: 0.7rem;
+        border-radius: 20px;
+    }
+}

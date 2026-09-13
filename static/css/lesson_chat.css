@@ -152,6 +152,7 @@
     backdrop-filter: brightness(50%);
     border: 2px outset buttonborder;
     box-shadow: 2px 2px 3px rgb(255 255 255 / 0.59);
+    color: white;
     outline: none;
 }
 
@@ -209,3 +210,45 @@
 
 
 /* ================== lesson chat style ==============================  */
+
+
+
+/* =================== RWD table and phone ======================  */
+
+
+/* --------- RWD table style --------- */
+
+@media (max-width: 880px){
+    .lessons_section{
+        min-height: 850px;
+        flex-direction: column;
+    }
+
+    .course_lessons{
+        width: 100%;
+        order: 2;
+    }
+
+    .lesson_chat{
+        width: 98%;
+    }
+}
+
+
+
+
+/*-------- RWD phone style -----------*/
+@media (max-width: 700px) {
+    .lessons_section {
+        flex-direction: column;
+    }
+
+    .course_lessons {
+        width: 98%;
+        order: 2;
+    }
+
+    .lesson_card{
+        width: 100%;
+    }
+}
