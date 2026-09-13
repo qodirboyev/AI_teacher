@@ -1,12 +1,10 @@
-from multiprocessing import context
 from django.shortcuts import render
 import os
+
 from google import genai
 from google.genai import errors
 
-
-from courses_app.models import Courses,Lessons
-
+from courses_app.models import Courses, Lessons
 
 # Create your views here.
 
@@ -18,7 +16,6 @@ def courses(request):
         'courses': Courses.objects.filter(direction = direction)
     }
     return render(request, template_name, context)
-
 
 
 def lesson_chat_view(request):
@@ -40,19 +37,28 @@ def lesson_chat_view(request):
 
         savol = request.POST.get("savol")
 
-        client = genai.Client(api_key=os.getenv("API_KEY"))
         try:
+            client = genai.Client(
+                api_key=os.getenv("API_KEY")
+            )
+
             response = client.models.generate_content(
                 model="gemini-3.6-flash",
                 contents=f"""
-                Sen AI Teacher san senga savollar boladi sen dars otasan lekin 
-                hardoyim buni takiroroy aytishing shart 
-                emas savolga qisqa va aniq javo bilan 
-                darsni tushuntirishing kerak halos 
-                agar savol bolmasa shunchaki darsga tayyor misiz deya javob qaytar
-    
+                Sen AI Teacher san.
+
+                Senga savollar beriladi.
+                Sen dars o'tasan.
+
+                Savolga qisqa va aniq javob ber.
+                Mavzuni tushunarli qilib tushuntir.
+                Keraksiz gaplarni yozma.
+
+                Agar savol bo'lmasa:
+                "Darsga tayyormisiz?" deb javob ber.
+
                 Kurs: {course.name}
-    
+
                 O'quvchining savoli:
                 {savol}
                 """,
@@ -63,22 +69,34 @@ def lesson_chat_view(request):
         except errors.ClientError as e:
 
             if e.code == 429:
-                context["response"] = "AI Teacherni dars limiti tugadi. \nBirozdan keyin yana urinib ko‘ring."
-            else:
-                context["response"] = "AI Teacher sever bilan bog‘lanishda xatolik yuz berdi.Birozdan keyin yana urinib ko‘ring."
+                context["response"] = (
+                    "AI Teacher limiti tugadi. "
+                    "Birozdan keyin yana urinib ko'ring."
+                )
 
-        except errors.ServerError:
-            except errors.ServerError as e:
-            # 500 va 503 ni ajratib ishlov beramiz
-            if "500" in str(e) or getattr(e, "code", None) == 500:
-                context[
-                    "response"] = "AI Teacher serverida ichki xato yuz berdi (500). \nIltimos, keyinroq yana urinib ko‘ring."
-            elif "503" in str(e) or getattr(e, "code", None) == 503:
-                context[
-                    "response"] = "AI Teacher serverida texnik tuzatish bo‘lmoqda (503). \nBirozdan keyin yana urinib ko‘ring."
             else:
-                context["response"] = "AI Teacher serverida noma’lum xato yuz berdi."
+                context["response"] = (
+                    "❌ AI Teacher server bilan bog'lanishda "
+                    "xatolik yuz berdi. Birozdan keyin yana urinib ko'ring."
+                )
+
+        except errors.ServerError as e:
+
+            if e.code == 500:
+                context["response"] = (
+                    "AI Teacher serverida ichki xato yuz berdi (500). "
+                    "Iltimos, keyinroq yana urinib ko'ring."
+                )
+
+            elif e.code == 503:
+                context["response"] = (
+                    "AI Teacher serveri hozir band (503). "
+                    "Birozdan keyin yana urinib ko'ring."
+                )
+
+            else:
+                context["response"] = (
+                    "❌ AI Teacher serverida noma'lum xato yuz berdi."
+                )
 
     return render(request, template_name, context)
-
-
