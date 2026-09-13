@@ -1,7 +1,7 @@
 from multiprocessing import context
-from google import genai
 from django.shortcuts import render
 import os
+from google import genai
 from google.genai import errors
 
 
