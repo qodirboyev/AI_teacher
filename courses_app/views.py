@@ -2,7 +2,7 @@ from django.shortcuts import render
 import os
 
 from google import genai
-from google.genai import errors
+from google.genai import errors , Client
 
 from courses_app.models import Courses, Lessons
 
