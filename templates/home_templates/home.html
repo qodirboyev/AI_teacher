@@ -31,6 +31,32 @@
 <!-- /header section -->
 
 
+<!-- auth section -->
+    <section class="auth_section">
+        {% if user.is_authenticated %}
+        <div class="yes_auth">
+            <h3>{{ user.first_name }}</h3>
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">chiqish</button>
+            </form>
+        </div>
+        {% else %}
+        <div class="no_auth">
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">kirish</button>
+            </form>
+            <form action="{% url 'signup' %}" method="get">
+                {% csrf_token %}
+                <button type="submit">Ro'yxatdan o'tish</button>
+            </form>
+        </div>
+        {% endif %}
+    </section>
+<!-- /auth section -->
+
+
 <!-- main section -->
     <div class="contener">
     <section class="main_section section_style">

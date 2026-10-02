@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="Author and ADMIN" content="Qodirboyev Demir">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="AI Teacher - Intellektual Ta'lim Platformasi">
+    <meta name="description" content="AI Teacher — sun’iy intellekt asosidagi aqlli o‘qituvchi platforma. Frontend, Backend, AI, Cybersecurity va boshqa IT yo‘nalishlarini interaktiv chat orqali o‘rganing.">
+    <meta name="keywords" content="AI Teacher, suniy intellekt, ta'lim platformasi, Python, Django, Frontend, Backend, Cybersecurity, IT kurslar, online o‘qish">
+
+    <title>AI teacher</title>
+
+    <link rel="icon" href="{% static 'photos/AI_teacher_img.png' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+</head>
+<body>
+<!-- header section -->
+    <header class="header_section">
+        <div class="AI_teacher_img">
+            <img src="{% static 'photos/AI_teacher_img.png' %}" alt="foto">
+        </div>
+        <div>
+            <h1 class="text"><span class="AI_span">AI</span> teacher</h1>
+        </div>
+    </header>
+<!-- /header section -->
+
+
+<!-- back button -->
+    <div class="back_button">
+        <a href="{% url 'home' %}" class="text">Back<i class="fa-solid fa-arrow-rotate-left"></i></a>
+    </div>
+<!-- /back button -->
+
+
+<!-- login section  -->
+    <section class="registration_section">
+        <div class="form_card">
+            <div class="form_name">Sign up</div>
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Kirish</button>
+            </form>
+        </div>
+    </section>
+<!-- /login section  -->
+
+
+
+<!-- footer section -->
+    <footer class="footer_section">
+        <div class="footer_img">
+            <img src="{% static 'photos/AI_teacher_img.png' %}" alt="foto">
+            <h1 class="text"><span class="AI_span">AI</span> Teacher</h1>
+        </div>
+        <div class="footer_info">
+            <p class="text">© 2026 AI Teacher. All rights reserved.</p>
+            <div class="footer_media text">
+                <a href="#" class="text"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="text"><i class="fa-brands fa-telegram"></i></a>
+                <a href="#" class="text"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+<!-- /footer section -->
+</body>
+</html>
