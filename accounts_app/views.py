@@ -8,5 +8,4 @@ from .forms import RegisterForm
 class SignUpForm(CreateView):
     form_class = RegisterForm
     model = User
-    fields = ['username', 'first_name', 'last_name']
     template_name = 'registration/signup.html'

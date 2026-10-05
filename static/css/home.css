@@ -400,9 +400,73 @@
 
 
 
-.auth_section{
+.menu_icon,.auth_section{
     position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
+    top: 10px;
+    left: 10px;
+    z-index: 11;
+}
+
+.menu_icon i{
+    font-size: 1.5rem;
+}
+
+
+.auth_section{
+    padding:1rem;
+    box-sizing: border-box;
+    min-width: 250px;
+    border: 2px outset buttonborder;
+    border-radius: 20px;
+    background-color: rgb(135 135 255 / 0.89);
+    animation: menu 0.3s 1 linear;
+}
+
+@keyframes menu {
+    0%{
+        transform: translate(-30px,-30px) scale(0.3,0.3);
+    }
+}
+
+.auth_section > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.yes_auth h3{
+    padding: 0 0.5rem;
+    animation: menu 0.2s 1 linear;
+}
+
+.auth_section button{
+    background-color: rgb(0 107 27 / 0.95);
+    color: white;
+    border-radius: 20px;
+    font-size: 1rem;
+    padding: 0.5rem;
+    display: inline-block;
+    transition: 0.5s all;
+    margin: 0 0.5rem;
+    animation: menu 0.2s 1 linear;
+}
+
+.auth_section button:hover{
+    transform: scale(1.1,1.1);
+}
+
+
+.auth_section > span{
+    animation: menu 0.2s 1 linear;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.7rem;
+    text-align: right;
+    padding: 1rem 0 0 0;
+    transition: 0.5s all;
+    cursor: pointer;
+}
+
+.auth_section > span:hover{
+    color: rgb(255 255 255 / 0.35);
 }

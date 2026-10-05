@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
+    <script src="{% static 'js/home.js' %}" defer></script>
 </head>
 <body>
 <!-- header section -->
@@ -30,29 +31,36 @@
     </header>
 <!-- /header section -->
 
+<!-- menu icon -->
+    <div class="menu_icon text" id="menu_icon" >
+        <i class="fa-solid fa-bars" id="icon_i" onclick="menu()"></i>
+    </div>
+<!-- /menu icon -->
+
 
 <!-- auth section -->
-    <section class="auth_section">
+    <section class="auth_section" id="auth_section">
         {% if user.is_authenticated %}
-        <div class="yes_auth">
-            <h3>{{ user.first_name }}</h3>
+        <div class="yes_auth" id="yes_auth">
+            <h3 id="user_first_name" class="text"><i class="fa-solid fa-circle-user"></i>{{ user.first_name }}</h3>
             <form action="{% url 'logout' %}" method="post">
                 {% csrf_token %}
-                <button type="submit">chiqish</button>
+                <button type="submit">Chiqish<i class="fa-solid fa-right-from-bracket"></i></button>
             </form>
         </div>
         {% else %}
-        <div class="no_auth">
+        <div class="no_auth" id="no_auth">
             <form action="{% url 'login' %}" method="post">
                 {% csrf_token %}
-                <button type="submit">kirish</button>
+                <button type="submit">Kirish<i class="fa-solid fa-right-to-bracket"></i></button>
             </form>
             <form action="{% url 'signup' %}" method="get">
                 {% csrf_token %}
-                <button type="submit">Ro'yxatdan o'tish</button>
+                <button type="submit">Ro'yxatdan o'tish<i class="fa-solid fa-user-plus"></i></button>
             </form>
         </div>
         {% endif %}
+        <span class="menu_back text" id="menu_back" onclick="back_menu()">back<i class="fa-solid fa-arrow-rotate-left"></i></span>
     </section>
 <!-- /auth section -->
 
