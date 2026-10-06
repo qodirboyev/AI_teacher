@@ -33,7 +33,7 @@
 
 <!-- menu icon -->
     <div class="menu_icon text" id="menu_icon" >
-        <i class="fa-solid fa-bars" id="icon_i" onclick="menu()"></i>
+        <i class="fa-solid fa-circle-user" id="icon_i" onclick="menu()"></i>
     </div>
 <!-- /menu icon -->
 
@@ -56,7 +56,7 @@
             </form>
             <form action="{% url 'signup' %}" method="get">
                 {% csrf_token %}
-                <button type="submit">Ro'yxatdan o'tish<i class="fa-solid fa-user-plus"></i></button>
+                <button type="submit">Ro'yxatdan o'tish <i class="fa-solid fa-user-plus"></i></button>
             </form>
         </div>
         {% endif %}

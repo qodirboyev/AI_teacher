@@ -403,7 +403,7 @@
 .menu_icon,.auth_section{
     position: fixed;
     top: 10px;
-    left: 10px;
+    right: 10px;
     z-index: 11;
 }
 
@@ -424,7 +424,7 @@
 
 @keyframes menu {
     0%{
-        transform: translate(-30px,-30px) scale(0.3,0.3);
+        transform: translate(30px,-30px) scale(0.3,0.3);
     }
 }
 

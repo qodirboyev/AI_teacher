@@ -17,7 +17,6 @@ def courses(request):
     }
     return render(request, template_name, context)
 
-
 def lesson_chat_view(request):
 
     template_name = "courses_templates/lesson_chat.html"
@@ -76,7 +75,7 @@ def lesson_chat_view(request):
 
             else:
                 context["response"] = (
-                    "❌ AI Teacher server bilan bog'lanishda "
+                    "AI Teacher server bilan bog'lanishda "
                     "xatolik yuz berdi. Birozdan keyin yana urinib ko'ring."
                 )
 
@@ -96,7 +95,7 @@ def lesson_chat_view(request):
 
             else:
                 context["response"] = (
-                    "❌ AI Teacher serverida noma'lum xato yuz berdi."
+                    "AI Teacher serverida noma'lum xato yuz berdi."
                 )
 
     return render(request, template_name, context)
