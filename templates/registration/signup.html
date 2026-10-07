@@ -43,7 +43,7 @@
     <section class="registration_section">
         <div class="form_card text">
             <div class="form_name">Ro'yxatdan o'tish <i class="fa-solid fa-user-plus"></i></div>
-            <form action="{% url 'login' %}" method="post">
+            <form action="" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit">Keyingi</button>

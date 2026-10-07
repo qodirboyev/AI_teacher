@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import os
+from django.contrib.auth.decorators import login_required
 
 from google import genai
 from google.genai import errors , Client
@@ -8,7 +9,7 @@ from courses_app.models import Courses, Lessons
 
 # Create your views here.
 
-
+@login_required(login_url="login")
 def courses(request):
     template_name = 'courses_templates/courses.html'
     direction = request.POST.get("direction")
@@ -17,6 +18,9 @@ def courses(request):
     }
     return render(request, template_name, context)
 
+
+
+@login_required(login_url="login")
 def lesson_chat_view(request):
 
     template_name = "courses_templates/lesson_chat.html"

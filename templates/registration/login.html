@@ -46,6 +46,7 @@
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit">Kirish <i class="fa-solid fa-right-to-bracket"></i></button>
+                <a href="{% url 'signup' %}">Ro'yxatdan o'tish <i class="fa-solid fa-user-plus"></i></a>
             </form>
         </div>
     </section>
