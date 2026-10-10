@@ -173,6 +173,166 @@
 
 
 
+/* ============ AUTH section style ===================== */
+.menu_icon,.auth_section{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 11;
+}
+
+.menu_icon i{
+    font-size: 1.5rem;
+}
+
+
+.auth_section{
+    padding:1rem;
+    box-sizing: border-box;
+    min-width: 250px;
+    border: 2px outset buttonborder;
+    border-radius: 20px;
+    background-color: rgb(135 135 255 / 0.89);
+    animation: menu 0.3s 1 linear;
+}
+
+@keyframes menu {
+    0%{
+        transform: translate(30px,-30px) scale(0.3,0.3);
+    }
+}
+
+.auth_section > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.yes_auth h3{
+    padding: 0 0.5rem;
+    animation: menu 0.2s 1 linear;
+}
+
+.auth_section button{
+    background-color: rgb(0 107 27 / 0.95);
+    color: white;
+    border-radius: 20px;
+    font-size: 1rem;
+    padding: 0.5rem;
+    display: inline-block;
+    transition: 0.5s all;
+    margin: 0 0.5rem;
+    animation: menu 0.2s 1 linear;
+}
+
+.auth_section button:hover{
+    transform: scale(1.1,1.1);
+}
+
+
+.auth_section > span{
+    animation: menu 0.2s 1 linear;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.7rem;
+    text-align: right;
+    padding: 1rem 0 0 0;
+    transition: 0.5s all;
+    cursor: pointer;
+}
+
+.auth_section > span:hover{
+    color: rgb(255 255 255 / 0.35);
+}
+
+
+/* ============ AUTH section style ===================== */
+
+
+
+/* ============ teacher face section style =============== */
+.teacher_face_section{
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+
+.section_title h3{
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin: 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+.section_title p{
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.teacher_face{
+    width: 80%;
+    margin: 1rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+.teacher_face a{
+    display: inline-block;
+    background-color: #269e42;
+    color: white;
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 20%;
+    border-radius: 30px;
+    position: relative;
+    top: -45px;
+    transition: 0.4s all;
+}
+
+.teacher_face a:hover{
+    transform: scale(1.1,1.1);
+}
+
+.blue_fon{
+    background-color: #061536;
+    border-radius: 30%;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
+
+
+.blue_fon img{
+    width: 400px;
+    border-radius: 40%;
+    animation: AI_teacher 1s infinite linear alternate;
+}
+
+@keyframes AI_teacher{
+    0%{
+        transform: scale(0.9,0.9) translate(-200px,-20px) rotate(-20deg);
+    }
+    50%{
+        transform: scale(1,1) translate(0px,0px) rotate(0deg);
+    }
+    100%{
+        transform: scale(0.9,0.9) translate(200px,-20px) rotate(20deg);
+    }
+}
+
+
+
+/* ============ teacher face section style =============== */
+
+
+
 
 /* =========================================================
    HOME PAGE — RESPONSIVE DESIGN
@@ -279,7 +439,29 @@
         border-radius: 25px;
         padding: 0.7rem;
     }
+
+    .teacher_face a{
+        width: 50%;
+    }
+
+    .blue_fon img{
+        animation-duration: 1s;
+    }
+
+    @keyframes AI_teacher {
+        0%{
+            transform: scale(0.9,0.9) translate(-150px,-20px) rotate(-20deg);
+        }
+        50%{
+            transform: scale(1,1) translate(0px,0px) rotate(0deg);
+        }
+        100%{
+            transform: scale(0.9,0.9) translate(150px,-20px) rotate(20deg);
+        }
+    }
 }
+
+
 
 
 /* ====================== PHONE ====================== */
@@ -396,77 +578,44 @@
         padding: 0.7rem;
         border-radius: 20px;
     }
-}
 
-
-
-.menu_icon,.auth_section{
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 11;
-}
-
-.menu_icon i{
-    font-size: 1.5rem;
-}
-
-
-.auth_section{
-    padding:1rem;
-    box-sizing: border-box;
-    min-width: 250px;
-    border: 2px outset buttonborder;
-    border-radius: 20px;
-    background-color: rgb(135 135 255 / 0.89);
-    animation: menu 0.3s 1 linear;
-}
-
-@keyframes menu {
-    0%{
-        transform: translate(30px,-30px) scale(0.3,0.3);
+    .section_title h3{
+        font-size: 1.5rem;
+        width: 100%;
+        padding: 0.5rem 0;
+        border-bottom: 2px solid rgb(255 255 255 / 0.81);
     }
+
+    .section_title p{
+        font-size: 0.8rem;
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+
+    .teacher_face a{
+        width: 50%;
+    }
+
+    .blue_fon img{
+        animation-duration: 0.8s;
+        width: 300px;
+    }
+
+    @keyframes AI_teacher {
+        0%{
+            transform: scale(0.9,0.9) translate(-100px,-20px) rotate(-20deg);
+        }
+        50%{
+            transform: scale(1,1) translate(0px,0px) rotate(0deg);
+        }
+        100%{
+            transform: scale(0.9,0.9) translate(100px,-20px) rotate(20deg);
+        }
+    }
+
+
+
 }
 
-.auth_section > div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.yes_auth h3{
-    padding: 0 0.5rem;
-    animation: menu 0.2s 1 linear;
-}
-
-.auth_section button{
-    background-color: rgb(0 107 27 / 0.95);
-    color: white;
-    border-radius: 20px;
-    font-size: 1rem;
-    padding: 0.5rem;
-    display: inline-block;
-    transition: 0.5s all;
-    margin: 0 0.5rem;
-    animation: menu 0.2s 1 linear;
-}
-
-.auth_section button:hover{
-    transform: scale(1.1,1.1);
-}
 
 
-.auth_section > span{
-    animation: menu 0.2s 1 linear;
-    display: inline-block;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 0.7rem;
-    text-align: right;
-    padding: 1rem 0 0 0;
-    transition: 0.5s all;
-    cursor: pointer;
-}
-
-.auth_section > span:hover{
-    color: rgb(255 255 255 / 0.35);
-}
