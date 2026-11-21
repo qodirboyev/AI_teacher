@@ -1,0 +1,116 @@
+.teacher_section{
+    box-sizing: border-box;
+    padding: 3rem 0.5rem 1rem;
+}
+
+
+.teacher_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: linear-gradient(to top left, rgb(151 151 255 / 0.92),white,white, rgb(137 137 251 / 0.93));
+    box-sizing: border-box;
+    box-shadow: 2px 2px 3px rgb(0 0 0 / 0.83);
+    border-radius: 20px;
+    padding: 4rem 0;
+}
+
+
+.status_div{
+    color: rgb(0 0 0 / 0.92);
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    margin: 2rem;
+    width: 60%;
+    border-radius: 30px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.status_div span{
+    color: rgb(255 0 0 / 0.88);
+    font-size: 1.2rem;
+    display: inline-block;
+    padding: 0.5rem;
+    animation: status_dot 1s infinite alternate linear;
+}
+
+@keyframes status_dot {
+    100%{
+        color: #01d833;
+        transform: scale(1.2,1.2);
+    }
+}
+
+
+.face_div{
+    box-sizing: border-box;
+    background-color: #061536;
+    width: 300px;
+    height: 150px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.koz{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4ac1f7;
+    display: inline-block;
+    margin: 10px 35px;
+}
+
+.ovoz{
+    width: 80px;
+    height: 15px;
+    background-color: #4ac1f7;
+    margin: 0 0 15px;
+    border-radius: 20px;
+}
+
+
+.button_div{
+    padding: 3rem 0 1rem;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: center;
+}
+
+
+.button_div > span{
+    display: inline-block;
+    color: white;
+    box-sizing: border-box;
+    border-radius: 50%;
+    margin: 0.5rem;
+    transition: 0.4s all;
+}
+
+.mkr{
+    background-color: #006b1b;
+    padding: 0.5rem;
+    font-size: 2rem;
+}
+
+.push{
+    background-color: rgb(90 90 244 / 0.89);
+    font-size: 1.7rem;
+    padding: 0.7rem;
+
+}
+
+.mkr:hover{
+    background-color: red;
+    transform: translateY(-3px);
+}
+
+.push:hover{
+    background-color: #4ac1f7;
+    transform: translateY(-3px);
+}
